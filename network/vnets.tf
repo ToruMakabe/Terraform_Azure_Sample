@@ -10,4 +10,11 @@ resource "azurerm_virtual_network" "vnet1" {
     address_prefix = "${var.vnet1_frontend_address_prefix}"
     security_group = "${azurerm_network_security_group.frontend.id}"
   }
+  
+    subnet {
+    name           = "vet1_backend"
+    address_prefix = "${var.vnet1_backend_address_prefix}"
+    security_group = "${azurerm_network_security_group.backend.id}"
+  }
+  
 }

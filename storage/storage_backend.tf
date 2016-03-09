@@ -1,5 +1,5 @@
-resource "azurerm_storage_account" "sa01" {
-    name = "${var.prefix}sa01"
+resource "azurerm_storage_account" "sabk01" {
+    name = "${var.prefix}sabk01"
     resource_group_name = "${var.resource_group_name}"
 
     location = "${var.location}"
@@ -10,9 +10,9 @@ resource "azurerm_storage_account" "sa01" {
     }
 }
 
-resource "azurerm_storage_container" "cont01" {
+resource "azurerm_storage_container" "contbk01" {
     name = "vhds"
     resource_group_name =  "${var.resource_group_name}"
-    storage_account_name = "${azurerm_storage_account.sa01.name}"
+    storage_account_name = "${azurerm_storage_account.sabk01.name}"
     container_access_type = "private"
 }

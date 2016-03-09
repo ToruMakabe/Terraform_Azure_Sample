@@ -34,6 +34,7 @@ resource "azurerm_network_security_rule" "web443" {
     network_security_group_name = "${azurerm_network_security_group.frontend.name}"
 }
 
+# You should define source address prefix as specific IP, if you can
 resource "azurerm_network_security_rule" "ssh" {
     name = "ssh"
     priority = 200
