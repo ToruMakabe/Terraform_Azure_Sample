@@ -11,7 +11,7 @@ resource "azurerm_virtual_network" "vnet1" {
     security_group = "${azurerm_network_security_group.frontend.id}"
   }
   
-    subnet {
+  subnet {
     name           = "vet1_backend"
     address_prefix = "${var.vnet1_backend_address_prefix}"
     security_group = "${azurerm_network_security_group.backend.id}"
