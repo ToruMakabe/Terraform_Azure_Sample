@@ -6,8 +6,8 @@ resource "azurerm_network_security_group" "frontend" {
 }
 
 # Create a network security group rule
-resource "azurerm_network_security_rule" "web80" {
-    name = "web80"
+resource "azurerm_network_security_rule" "fe_web80" {
+    name = "fe_web80"
     priority = 100
     direction = "Inbound"
     access = "Allow"
@@ -20,8 +20,8 @@ resource "azurerm_network_security_rule" "web80" {
     network_security_group_name = "${azurerm_network_security_group.frontend.name}"
 }
 
-resource "azurerm_network_security_rule" "web443" {
-    name = "web443"
+resource "azurerm_network_security_rule" "fe_web443" {
+    name = "fe_web443"
     priority = 101
     direction = "Inbound"
     access = "Allow"
@@ -35,8 +35,8 @@ resource "azurerm_network_security_rule" "web443" {
 }
 
 # You should define source address prefix as specific IP, if you can
-resource "azurerm_network_security_rule" "ssh" {
-    name = "ssh"
+resource "azurerm_network_security_rule" "fe_ssh" {
+    name = "fe_ssh"
     priority = 200
     direction = "Inbound"
     access = "Allow"

@@ -5,10 +5,11 @@ resource "azurerm_network_security_group" "backend" {
     resource_group_name = "${var.resource_group_name}"
 }
 
+
 # Create a network security group rule
 
-resource "azurerm_network_security_rule" "fromfe" {
-    name = "fromfe"
+resource "azurerm_network_security_rule" "be_fromfe" {
+    name = "be_fromfe"
     priority = 100
     direction = "Inbound"
     access = "Allow"
