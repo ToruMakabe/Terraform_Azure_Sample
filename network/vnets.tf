@@ -17,7 +17,8 @@ resource "azurerm_subnet" "frontend" {
     depends_on = [
         "azurerm_network_security_rule.fe_web80",
         "azurerm_network_security_rule.fe_web443",
-        "azurerm_network_security_rule.fe_ssh"
+        "azurerm_network_security_rule.fe_ssh",
+        "azurerm_network_security_rule.fe_denyinternet"
     ]
 }
 
@@ -30,6 +31,6 @@ resource "azurerm_subnet" "backend" {
     address_prefix = "${var.vnet1_backend_address_prefix}"
     network_security_group_id = "${azurerm_network_security_group.backend.id}"
     depends_on = [
-        "azurerm_network_security_rule.be_fromfe"
+        "azurerm_network_security_rule.be_denyinternet"
     ]
 }
