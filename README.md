@@ -1,3 +1,6 @@
+# Out of date...
+A new sample is [here](http://torumakabe.github.io/post/terraform_azure_sample_201801/). (Sorry in Japanese)
+
 # Overview
 For your better understanding how to use Terraform & Azure
 
